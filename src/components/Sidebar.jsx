@@ -55,9 +55,11 @@ const Sidebar = ({ activePath = "/" }) => {
         {/* Logo */}
         <div className="p-4 flex justify-center items-center">
           {isCollapsed ? (
-            <div className="w-8 h-8 bg-white rounded-full"></div>
+            <span className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+              🏠
+            </span>
           ) : (
-            <div className="text-2xl font-bold">MCalc</div>
+            <div className="text-2xl font-bold">🏠 MCalc</div>
           )}
         </div>
 

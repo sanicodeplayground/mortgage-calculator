@@ -48,42 +48,44 @@ const MortgageTermComparison = () => {
   }));
 
   return (
-    <div className="space-y-8">
-      <div className="w-full h-96">
-        <h3 className="text-lg font-semibold mb-2">
-          Monthly Payments Comparison
-        </h3>
-        <ResponsiveContainer width="100%" height="100%">
-          <BarChart
-            data={monthlyPaymentData}
-            margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="term" />
-            <YAxis />
-            <Tooltip formatter={(value) => `£${value.toLocaleString()}`} />
-            <Legend />
-            <Bar dataKey="Monthly Payment" fill="#8884d8" />
-          </BarChart>
-        </ResponsiveContainer>
-      </div>
+    <div className="bg-white rounded-lg shadow p-4">
+      <div className="space-y-8">
+        <div className="w-full h-96">
+          <h3 className="text-lg font-semibold mb-2">
+            Monthly Payments Comparison
+          </h3>
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart
+              data={monthlyPaymentData}
+              margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+            >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="term" />
+              <YAxis />
+              <Tooltip formatter={(value) => `£${value.toLocaleString()}`} />
+              <Legend />
+              <Bar dataKey="Monthly Payment" fill="#8884d8" />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
 
-      <div className="w-full h-96">
-        <h3 className="text-lg font-semibold mb-2">Total Cost Comparison</h3>
-        <ResponsiveContainer width="100%" height="100%">
-          <BarChart
-            data={totalCostData}
-            margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="term" />
-            <YAxis />
-            <Tooltip formatter={(value) => `£${value.toLocaleString()}`} />
-            <Legend />
-            <Bar dataKey="Principal" stackId="a" fill="#8884d8" />
-            <Bar dataKey="Interest" stackId="a" fill="#82ca9d" />
-          </BarChart>
-        </ResponsiveContainer>
+        <div className="w-full h-96">
+          <h3 className="text-lg font-semibold mb-2">Total Cost Comparison</h3>
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart
+              data={totalCostData}
+              margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+            >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="term" />
+              <YAxis />
+              <Tooltip formatter={(value) => `£${value.toLocaleString()}`} />
+              <Legend />
+              <Bar dataKey="Principal" stackId="a" fill="#8884d8" />
+              <Bar dataKey="Interest" stackId="a" fill="#82ca9d" />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
       </div>
     </div>
   );
