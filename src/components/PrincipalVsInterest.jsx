@@ -1,7 +1,7 @@
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
 
 const PrincipalVsInterest = ({ interestData, COLORS }) => (
-  <div>
+  <div className="bg-white rounded-lg shadow p-4">
     <h3 className="text-lg font-semibold mb-2">Principal vs Interest</h3>
     <ResponsiveContainer width="100%" height={300}>
       <PieChart>

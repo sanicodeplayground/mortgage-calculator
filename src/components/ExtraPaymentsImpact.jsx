@@ -66,71 +66,79 @@ const ExtraPaymentsImpact = () => {
   }));
 
   return (
-    <div className="space-y-8">
-      <div className="w-full h-96 mb-32">
-        <h3 className="text-lg font-semibold mb-2">Loan Balance Over Time</h3>
-        <p className="mb-4">
-          How additional payments can significantly reduce interest and loan
-          duration.
-        </p>
-        <ResponsiveContainer width="100%" height="100%">
-          <LineChart
-            data={combinedData}
-            margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="year" />
-            <YAxis />
-            <Tooltip formatter={(value) => `£${value.toLocaleString()}`} />
-            <Legend />
-            <Line type="monotone" dataKey="Original Balance" stroke="#8884d8" />
-            <Line
-              type="monotone"
-              dataKey="£5,000 Extra/Year Balance"
-              stroke="#82ca9d"
-            />
-            <Line
-              type="monotone"
-              dataKey="£10,000 Extra/Year Balance"
-              stroke="#ffc658"
-            />
-          </LineChart>
-        </ResponsiveContainer>
-      </div>
+    <div className="bg-white rounded-lg shadow p-4">
+      <div className="space-y-8">
+        <div className="w-full h-96 mb-32">
+          <h3 className="text-lg font-semibold mb-2">Loan Balance Over Time</h3>
+          <p className="mb-4">
+            How additional payments can significantly reduce interest and loan
+            duration.
+          </p>
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart
+              data={combinedData}
+              margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+            >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="year" />
+              <YAxis />
+              <Tooltip formatter={(value) => `£${value.toLocaleString()}`} />
+              <Legend />
+              <Line
+                type="monotone"
+                dataKey="Original Balance"
+                stroke="#8884d8"
+              />
+              <Line
+                type="monotone"
+                dataKey="£5,000 Extra/Year Balance"
+                stroke="#82ca9d"
+              />
+              <Line
+                type="monotone"
+                dataKey="£10,000 Extra/Year Balance"
+                stroke="#ffc658"
+              />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
 
-      <div className="w-full h-96 mb-32">
-        <h3 className="text-lg font-semibold mb-2">Cumulative Interest Paid</h3>
-        <p className="mb-4">
-          How additional payments can significantly reduce interest and loan
-          duration.
-        </p>
-        <ResponsiveContainer width="100%" height="100%">
-          <LineChart
-            data={combinedData}
-            margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="year" />
-            <YAxis />
-            <Tooltip formatter={(value) => `£${value.toLocaleString()}`} />
-            <Legend />
-            <Line
-              type="monotone"
-              dataKey="Original Interest"
-              stroke="#8884d8"
-            />
-            <Line
-              type="monotone"
-              dataKey="£5,000 Extra/Year Interest"
-              stroke="#82ca9d"
-            />
-            <Line
-              type="monotone"
-              dataKey="£10,000 Extra/Year Interest"
-              stroke="#ffc658"
-            />
-          </LineChart>
-        </ResponsiveContainer>
+        <div className="w-full h-96 mb-32">
+          <h3 className="text-lg font-semibold mb-2">
+            Cumulative Interest Paid
+          </h3>
+          <p className="mb-4">
+            How additional payments can significantly reduce interest and loan
+            duration.
+          </p>
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart
+              data={combinedData}
+              margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+            >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="year" />
+              <YAxis />
+              <Tooltip formatter={(value) => `£${value.toLocaleString()}`} />
+              <Legend />
+              <Line
+                type="monotone"
+                dataKey="Original Interest"
+                stroke="#8884d8"
+              />
+              <Line
+                type="monotone"
+                dataKey="£5,000 Extra/Year Interest"
+                stroke="#82ca9d"
+              />
+              <Line
+                type="monotone"
+                dataKey="£10,000 Extra/Year Interest"
+                stroke="#ffc658"
+              />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
       </div>
     </div>
   );

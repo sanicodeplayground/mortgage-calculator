@@ -41,37 +41,39 @@ const BalancePrincipalChart = () => {
   const data = calculateAmortization();
 
   return (
-    <div className="w-full h-96 mb-12">
-      <h3 className="text-lg font-semibold mb-2">
-        Principal vs. Balance vs. Paid Over Time
-      </h3>
-      <p className="mb-2">
-        How your monthly payment is split between principal and balance
-      </p>
-      <ResponsiveContainer width="100%" height="100%">
-        <LineChart
-          data={data}
-          margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="year" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Line
-            type="monotone"
-            dataKey="balance"
-            stroke="#82ca9d"
-            name="Remaining Balance"
-          />
-          <Line
-            type="monotone"
-            dataKey="principalPaid"
-            stroke="#8884d8"
-            name="Principal Paid"
-          />
-        </LineChart>
-      </ResponsiveContainer>
+    <div className="bg-white rounded-lg shadow p-4">
+      <div className="w-full h-96 mb-12">
+        <h3 className="text-lg font-semibold mb-2">
+          Principal vs. Balance vs. Paid Over Time
+        </h3>
+        <p className="mb-2">
+          How your monthly payment is split between principal and balance
+        </p>
+        <ResponsiveContainer width="100%" height="100%">
+          <LineChart
+            data={data}
+            margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="year" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Line
+              type="monotone"
+              dataKey="balance"
+              stroke="#82ca9d"
+              name="Remaining Balance"
+            />
+            <Line
+              type="monotone"
+              dataKey="principalPaid"
+              stroke="#8884d8"
+              name="Principal Paid"
+            />
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
     </div>
   );
 };

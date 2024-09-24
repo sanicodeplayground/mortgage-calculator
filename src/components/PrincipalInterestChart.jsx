@@ -43,38 +43,40 @@ const PrincipalInterestChart = () => {
   const data = calculateAmortization();
 
   return (
-    <div className="w-full h-96 mb-12">
-      <h3 className="text-lg font-semibold mb-2">
-        Principal vs. Interest Paid Over Time
-      </h3>
-      <p className="mb-2">
-        How your monthly payment is split between principal and interest over
-        time
-      </p>
-      <ResponsiveContainer width="100%" height="100%">
-        <BarChart
-          data={data}
-          margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="year" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar
-            dataKey="principalPaid"
-            stackId="a"
-            fill="#8884d8"
-            name="Principal Paid"
-          />
-          <Bar
-            dataKey="interestPaid"
-            stackId="a"
-            fill="#82ca9d"
-            name="Interest Paid"
-          />
-        </BarChart>
-      </ResponsiveContainer>
+    <div className="bg-white rounded-lg shadow p-4">
+      <div className="w-full h-96 mb-12">
+        <h3 className="text-lg font-semibold mb-2">
+          Principal vs. Interest Paid Over Time
+        </h3>
+        <p className="mb-2">
+          How your monthly payment is split between principal and interest over
+          time
+        </p>
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart
+            data={data}
+            margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="year" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Bar
+              dataKey="principalPaid"
+              stackId="a"
+              fill="#8884d8"
+              name="Principal Paid"
+            />
+            <Bar
+              dataKey="interestPaid"
+              stackId="a"
+              fill="#82ca9d"
+              name="Interest Paid"
+            />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
     </div>
   );
 };
